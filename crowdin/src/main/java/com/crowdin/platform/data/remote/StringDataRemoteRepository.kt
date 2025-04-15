@@ -14,6 +14,7 @@ import com.crowdin.platform.data.model.toLanguageInfo
 import com.crowdin.platform.data.parser.ReaderFactory
 import com.crowdin.platform.data.remote.api.CrowdinDistributionApi
 import com.crowdin.platform.util.executeIO
+import com.crowdin.platform.util.getFormattedCode
 import com.crowdin.platform.util.getMatchedCode
 import okhttp3.ResponseBody
 import retrofit2.Response
@@ -76,14 +77,7 @@ internal class StringDataRemoteRepository(
 
         // Combine all data before save to storage
         val languageData = LanguageData()
-        val languageInfo =
-            if (customLanguages?.contains(preferredLanguageCode) == true) {
-                customLanguages[preferredLanguageCode]?.toLanguageInfo()
-            } else {
-                getLanguageInfo(preferredLanguageCode)
-            } ?: return
-
-        languageData.language = languageInfo.locale
+        languageData.language = Locale.getDefault().getFormattedCode()
         manifest?.content?.get(preferredLanguageCode)?.forEach { filePath ->
             val eTag = eTagMap[filePath]
             val result =
