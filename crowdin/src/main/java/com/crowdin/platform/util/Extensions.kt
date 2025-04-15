@@ -68,7 +68,9 @@ fun getMatchedCode(
 
     if (customLanguages != null) {
         for (languageData in customLanguages) {
-            if (languageData.value.locale.equals(code, ignoreCase = true) || languageData.value.locale.equals(languageCode, ignoreCase = true)) {
+            if (languageData.value.locale.equals(code, ignoreCase = true) ||
+                languageData.value.locale.equals(languageCode, ignoreCase = true)
+            ) {
                 return languageData.key
             }
         }
