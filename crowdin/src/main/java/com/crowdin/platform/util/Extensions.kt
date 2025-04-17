@@ -78,7 +78,7 @@ fun getMatchedCode(
 
     if (list?.contains(code) == false) {
         return languageCode.takeIf { list.contains(languageCode) }
-            ?: list.first { it.split("-")[0] == languageCode }
+            ?: list.firstOrNull { it.split("-")[0] == languageCode }
     }
     return code
 }
