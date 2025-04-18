@@ -60,7 +60,7 @@ android {
 }
 
 dependencies {
-    implementation "com.github.FrontrowXP.crowdin-sdk-android:sdk:ad6e919e1d"
+    implementation "com.github.FrontrowXP.crowdin-sdk-android:sdk:a70c4da7f0"
 
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation 'androidx.core:core-ktx:1.10.1'
