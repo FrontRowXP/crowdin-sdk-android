@@ -27,7 +27,7 @@ publishing {
 
             groupId publishedGroupId
             artifactId artifact
-            version this.version
+//            version this.version
 
             pom {
                 name = libraryName
